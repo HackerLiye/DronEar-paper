@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.25)  28 OCT 2018 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.25)  28 OCT 2018 21:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -340,9 +340,6 @@ Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 
 LaTeX Warning: Label `formants' multiply defined.
 
-
-LaTeX Warning: Label `formants' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -461,6 +458,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
+Overfull \hbox (13.7782pt too wide) in paragraph at lines 71--72
+[]\OT1/cmr/m/n/10 The al-go-rithm can de-tect drone sound that is uniquely
+ []
+
+
 Overfull \hbox (11.4554pt too wide) in paragraph at lines 76--76
 [] \secfnt AU-DIO SIG-NA-TURES AND BA-SIC MOVE-
  []
@@ -586,10 +588,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4146 strings out of 492649
- 56187 string characters out of 6129621
- 132527 words of memory out of 5000000
- 7881 multiletter control sequences out of 15000+600000
+ 4147 strings out of 492649
+ 56193 string characters out of 6129621
+ 132535 words of memory out of 5000000
+ 7882 multiletter control sequences out of 15000+600000
  43554 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,37p,1406b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -610,7 +612,7 @@ t/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on main.pdf (7 pages, 5451594 bytes).
+Output written on main.pdf (7 pages, 5452038 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
