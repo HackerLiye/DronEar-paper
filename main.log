@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.25)  28 OCT 2018 15:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.25)  28 OCT 2018 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,97 +475,121 @@ File: pics/rssi_far.png Graphic file (type png)
 <use pics/rssi_far.png>
 Package pdftex.def Info: pics/rssi_far.png  used on input line 92.
 (pdftex.def)             Requested size: 201.59692pt x 136.729pt.
-<pics/up.png, id=15, 154.176pt x 154.176pt>
-File: pics/up.png Graphic file (type png)
-<use pics/up.png>
-Package pdftex.def Info: pics/up.png  used on input line 106.
-(pdftex.def)             Requested size: 100.79846pt x 100.79897pt.
-<pics/down.png, id=16, 139.2402pt x 148.3944pt>
-File: pics/down.png Graphic file (type png)
-<use pics/down.png>
-Package pdftex.def Info: pics/down.png  used on input line 109.
-(pdftex.def)             Requested size: 100.79846pt x 107.42807pt.
-<pics/near.png, id=17, 145.5036pt x 111.2958pt>
-File: pics/near.png Graphic file (type png)
-<use pics/near.png>
-Package pdftex.def Info: pics/near.png  used on input line 112.
-(pdftex.def)             Requested size: 100.79846pt x 77.10155pt.
-<pics/far.png, id=18, 154.176pt x 117.0774pt>
-File: pics/far.png Graphic file (type png)
-<use pics/far.png>
-Package pdftex.def Info: pics/far.png  used on input line 115.
-(pdftex.def)             Requested size: 100.79846pt x 76.54422pt.
+<pics/spectrogram.png, id=15, 170.91855pt x 127.37587pt>
+File: pics/spectrogram.png Graphic file (type png)
+<use pics/spectrogram.png>
+Package pdftex.def Info: pics/spectrogram.png  used on input line 101.
+(pdftex.def)             Requested size: 201.59692pt x 150.24777pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2]
-<pics/workflow.png, id=24, 514.5624pt x 268.8444pt>
+
+Underfull \vbox (badness 6396) has occurred while \output is active []
+
+ [2]
+<pics/zcp.png, id=21, 290.0436pt x 192.72pt>
+File: pics/zcp.png Graphic file (type png)
+<use pics/zcp.png>
+Package pdftex.def Info: pics/zcp.png  used on input line 113.
+(pdftex.def)             Requested size: 201.59692pt x 133.95616pt.
+
+Underfull \vbox (badness 2617) has occurred while \output is active []
+
+<pics/up.png, id=22, 154.176pt x 154.176pt>
+File: pics/up.png Graphic file (type png)
+<use pics/up.png>
+Package pdftex.def Info: pics/up.png  used on input line 122.
+(pdftex.def)             Requested size: 100.79846pt x 100.79897pt.
+<pics/down.png, id=23, 139.2402pt x 148.3944pt>
+File: pics/down.png Graphic file (type png)
+<use pics/down.png>
+Package pdftex.def Info: pics/down.png  used on input line 125.
+(pdftex.def)             Requested size: 100.79846pt x 107.42807pt.
+<pics/near.png, id=24, 145.5036pt x 111.2958pt>
+File: pics/near.png Graphic file (type png)
+<use pics/near.png>
+Package pdftex.def Info: pics/near.png  used on input line 128.
+(pdftex.def)             Requested size: 100.79846pt x 77.10155pt.
+<pics/far.png, id=25, 154.176pt x 117.0774pt>
+File: pics/far.png Graphic file (type png)
+<use pics/far.png>
+Package pdftex.def Info: pics/far.png  used on input line 131.
+(pdftex.def)             Requested size: 100.79846pt x 76.54422pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./pics/rssi_near.png> <./pics/rssi_far.png> <./pics/spectrogram.png> <./pic
+s/zcp.png>]
+<pics/workflow.png, id=35, 514.5624pt x 268.8444pt>
 File: pics/workflow.png Graphic file (type png)
 <use pics/workflow.png>
-Package pdftex.def Info: pics/workflow.png  used on input line 129.
+Package pdftex.def Info: pics/workflow.png  used on input line 145.
 (pdftex.def)             Requested size: 226.79846pt x 118.49701pt.
- [3 <./pics/rssi_near.png> <./pics/rssi_far.png> <./pics/up.png> <./pics/down.p
-ng> <./pics/near.png> <./pics/far.png> <./pics/workflow.png>]
-Overfull \hbox (27.2963pt too wide) detected at line 152
+
+Overfull \hbox (27.2963pt too wide) detected at line 168
 \OML/cmm/m/it/10 result[] \OT1/cmr/m/n/10 = []
  []
 
-
-Overfull \hbox (9.55595pt too wide) in paragraph at lines 158--160
+[4 <./pics/up.png> <./pics/down.png> <./pics/near.png> <./pics/far.png> <./pics
+/workflow.png>]
+Overfull \hbox (9.55595pt too wide) in paragraph at lines 174--176
 \OT1/cmr/m/n/10 Then, the al-go-rithm code uses a data struc-ture - "Disjoint-
  []
 
 
-Overfull \hbox (27.01138pt too wide) detected at line 165
+Overfull \hbox (27.01138pt too wide) detected at line 181
 \OML/cmm/m/it/10 line[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 formant[]; formant[
 ]; ::::::[] ; formant[]\OT1/cmr/m/n/10 )
  []
 
-<pics/original_formants.png, id=37, 527.571pt x 397.0032pt>
+<pics/original_formants.png, id=48, 527.571pt x 397.0032pt>
 File: pics/original_formants.png Graphic file (type png)
 <use pics/original_formants.png>
-Package pdftex.def Info: pics/original_formants.png  used on input line 178.
+Package pdftex.def Info: pics/original_formants.png  used on input line 194.
 (pdftex.def)             Requested size: 151.20154pt x 113.77708pt.
-<pics/processed_formants.png, id=38, 448.5558pt x 335.8146pt>
+<pics/processed_formants.png, id=49, 448.5558pt x 335.8146pt>
 File: pics/processed_formants.png Graphic file (type png)
 <use pics/processed_formants.png>
-Package pdftex.def Info: pics/processed_formants.png  used on input line 181.
+Package pdftex.def Info: pics/processed_formants.png  used on input line 197.
 (pdftex.def)             Requested size: 166.32092pt x 124.5159pt.
-<pics/final_formants.png, id=39, 535.7616pt x 402.303pt>
+<pics/final_formants.png, id=50, 535.7616pt x 402.303pt>
 File: pics/final_formants.png Graphic file (type png)
 <use pics/final_formants.png>
-Package pdftex.def Info: pics/final_formants.png  used on input line 184.
+Package pdftex.def Info: pics/final_formants.png  used on input line 200.
 (pdftex.def)             Requested size: 166.32092pt x 124.89066pt.
-<pics/exp.png, id=40, 433.1382pt x 319.9152pt>
+<pics/exp.png, id=51, 433.1382pt x 319.9152pt>
 File: pics/exp.png Graphic file (type png)
 <use pics/exp.png>
-Package pdftex.def Info: pics/exp.png  used on input line 195.
+Package pdftex.def Info: pics/exp.png  used on input line 211.
 (pdftex.def)             Requested size: 201.59692pt x 148.90059pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<pics/drones.png, id=41, 361.35pt x 194.6472pt>
+<pics/drones.png, id=52, 361.35pt x 194.6472pt>
 File: pics/drones.png Graphic file (type png)
 <use pics/drones.png>
-Package pdftex.def Info: pics/drones.png  used on input line 207.
+Package pdftex.def Info: pics/drones.png  used on input line 222.
 (pdftex.def)             Requested size: 201.59692pt x 108.59477pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4] [5 <./pics/original_formants.png> <./pics/processed_formants.png> <./pics/f
-inal_formants.png> <./pics/exp.png> <./pics/drones.png>] (./main.bbl) [6
+[5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]
-(./main.aux)
+ [6 <./pics/original_formants.png> <./pics/processed_formants.png> <./pics/fina
+l_formants.png> <./pics/exp.png> <./pics/drones.png>] (./main.bbl) [7
+
+] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4134 strings out of 492649
- 55988 string characters out of 6129621
- 132511 words of memory out of 5000000
- 7871 multiletter control sequences out of 15000+600000
+ 4146 strings out of 492649
+ 56187 string characters out of 6129621
+ 132527 words of memory out of 5000000
+ 7881 multiletter control sequences out of 15000+600000
  43554 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,37p,1406b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -586,10 +610,10 @@ t/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on main.pdf (6 pages, 4932575 bytes).
+Output written on main.pdf (7 pages, 5451594 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 122 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

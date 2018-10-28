@@ -96,8 +96,24 @@ In the features above, the RSSI value of the sound signal objectively reflects t
 
 The resonance peak proposed by us in the features above is actually a reference to the concept of resonance in the field of speech recognition, and is a term of acoustic phonetics. In the field of speech recognition, a resonance is a reinforced speech band that is displayed on a spectrogram automatically drawn by a sound spectrograph. When the sound passes through the resonant cavity, it is filtered by the cavity, so that the energy of different frequencies in the frequency domain is redistributed, part of which is strengthened by the resonance of the resonant cavity, and the other part is attenuated. Because the energy distribution is not uniform, the strong part comes more significantly than the weak part, then it is called "resonance". In our project, the concept of resonance is similar. We perform a short-time Fourier transform on the sound information from the drone received by the microphone, and we will obtain a sound intensity-frequency distribution map at each sampling instant. By setting the formant intensity threshold parameter $\beta_{strength}$, we filter out the sound frequency whose sound intensity is higher than the formant intensity threshold parameter $\beta_{strength}$ for the sound intensity-frequency distribution at each sampling time, that is, the logical position information of the formant of the sound signal received by the microphone is extracted. 
 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{pics/spectrogram.png}
+	\caption{Spectrogram of voice}
+	\label{spec}
+\end{figure}
+
 
 \subsection{Drone Movements}
+In the drone intrusion model we envisioned, the intruder used an unmanned aerial vehicle to invade the privacy or trade secrets of other individuals, attempting to violate the subject's wishes and to capture images inside the building. In this model, we assume that the intruder does not have the ability to modify the commercial unmanned aerial vehicle that they used, and they control the original unmanned aerial vehicle they purchased to complete the invasion.
+
+Since the unmanned aerial vehicle controlled by the intruder for intrusion cannot enter the interior of the building, the intruder must first control the drone to move it near a certain window outside the building during the completion of the intrusion. ZCP (Zone of Comfortable Photographing), in which the drone can capture pictures in the windows of the building more clearly and steadily. As shown in Figure \ref{zcp}, this action can be split into two parts: raising the drone vertically to a level that is flush with the window and moving the drone horizontally out of the window. After completing the above actions, the drone is in the shooting comfort zone ZCP outside a certain window of the building, and the intruder often tries to adjust the distance of the drone to the window (near or away) to obtain a suitable angle of view and suitable The clarity of the shooting until they can clearly use the drone to capture the picture they want. However, it is worth noting here that the drone cannot be arbitrarily approached to the outside of the building or its window. When the drone is very close to the outside of the building or its window, the instability of the airflow near the side of the building will result in an imbalance of airflow around the drone, which will make the drone difficult to control and increase the intrusion failure. risk.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{pics/zcp.png}
+	\caption{A typical privacy invasion attack by drone}
+	\label{zcp}
+\end{figure}
 
 \begin{figure}[!h]
 	\centering
@@ -202,7 +218,6 @@ We conducted experiments in three different environments, including a street nex
 
 
 \begin{figure}[!h]
-
 	\centering
 	\includegraphics[width=0.4\textwidth]{pics/drones.png}
 	\caption{Drones we used}
