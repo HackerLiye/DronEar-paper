@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.25)  25 OCT 2018 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.25)  28 OCT 2018 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -340,6 +340,9 @@ Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 
 LaTeX Warning: Label `formants' multiply defined.
 
+
+LaTeX Warning: Label `formants' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -462,65 +465,107 @@ Overfull \hbox (11.4554pt too wide) in paragraph at lines 76--76
 [] \secfnt AU-DIO SIG-NA-TURES AND BA-SIC MOVE-
  []
 
+<pics/rssi_near.png, id=12, 334.851pt x 225.4824pt>
+File: pics/rssi_near.png Graphic file (type png)
+<use pics/rssi_near.png>
+Package pdftex.def Info: pics/rssi_near.png  used on input line 89.
+(pdftex.def)             Requested size: 201.59692pt x 135.75151pt.
+<pics/rssi_far.png, id=14, 333.8874pt x 226.446pt>
+File: pics/rssi_far.png Graphic file (type png)
+<use pics/rssi_far.png>
+Package pdftex.def Info: pics/rssi_far.png  used on input line 92.
+(pdftex.def)             Requested size: 201.59692pt x 136.729pt.
+<pics/up.png, id=15, 154.176pt x 154.176pt>
+File: pics/up.png Graphic file (type png)
+<use pics/up.png>
+Package pdftex.def Info: pics/up.png  used on input line 106.
+(pdftex.def)             Requested size: 100.79846pt x 100.79897pt.
+<pics/down.png, id=16, 139.2402pt x 148.3944pt>
+File: pics/down.png Graphic file (type png)
+<use pics/down.png>
+Package pdftex.def Info: pics/down.png  used on input line 109.
+(pdftex.def)             Requested size: 100.79846pt x 107.42807pt.
+<pics/near.png, id=17, 145.5036pt x 111.2958pt>
+File: pics/near.png Graphic file (type png)
+<use pics/near.png>
+Package pdftex.def Info: pics/near.png  used on input line 112.
+(pdftex.def)             Requested size: 100.79846pt x 77.10155pt.
+<pics/far.png, id=18, 154.176pt x 117.0774pt>
+File: pics/far.png Graphic file (type png)
+<use pics/far.png>
+Package pdftex.def Info: pics/far.png  used on input line 115.
+(pdftex.def)             Requested size: 100.79846pt x 76.54422pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [2]
-Overfull \hbox (27.2963pt too wide) detected at line 114
+<pics/workflow.png, id=24, 514.5624pt x 268.8444pt>
+File: pics/workflow.png Graphic file (type png)
+<use pics/workflow.png>
+Package pdftex.def Info: pics/workflow.png  used on input line 129.
+(pdftex.def)             Requested size: 226.79846pt x 118.49701pt.
+ [3 <./pics/rssi_near.png> <./pics/rssi_far.png> <./pics/up.png> <./pics/down.p
+ng> <./pics/near.png> <./pics/far.png> <./pics/workflow.png>]
+Overfull \hbox (27.2963pt too wide) detected at line 152
 \OML/cmm/m/it/10 result[] \OT1/cmr/m/n/10 = []
  []
 
 
-Overfull \hbox (9.55595pt too wide) in paragraph at lines 120--122
+Overfull \hbox (9.55595pt too wide) in paragraph at lines 158--160
 \OT1/cmr/m/n/10 Then, the al-go-rithm code uses a data struc-ture - "Disjoint-
  []
 
 
-Overfull \hbox (27.01138pt too wide) detected at line 127
+Overfull \hbox (27.01138pt too wide) detected at line 165
 \OML/cmm/m/it/10 line[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 formant[]; formant[
 ]; ::::::[] ; formant[]\OT1/cmr/m/n/10 )
  []
 
-[3]
-<pics/original_formants.jpg, id=26, 702.625pt x 526.96875pt>
-File: pics/original_formants.jpg Graphic file (type jpg)
-<use pics/original_formants.jpg>
-Package pdftex.def Info: pics/original_formants.jpg  used on input line 141.
-(pdftex.def)             Requested size: 151.20154pt x 113.40059pt.
-<pics/processed_formants.jpg, id=27, 221.82875pt x 167.62625pt>
-File: pics/processed_formants.jpg Graphic file (type jpg)
-<use pics/processed_formants.jpg>
-Package pdftex.def Info: pics/processed_formants.jpg  used on input line 144.
-(pdftex.def)             Requested size: 151.20154pt x 114.25545pt.
-<pics/final_formants.jpg, id=28, 226.8475pt x 170.6375pt>
-File: pics/final_formants.jpg Graphic file (type jpg)
-<use pics/final_formants.jpg>
-Package pdftex.def Info: pics/final_formants.jpg  used on input line 147.
-(pdftex.def)             Requested size: 151.20154pt x 113.73547pt.
-<pics/drones.png, id=29, 361.35pt x 194.6472pt>
+<pics/original_formants.png, id=37, 527.571pt x 397.0032pt>
+File: pics/original_formants.png Graphic file (type png)
+<use pics/original_formants.png>
+Package pdftex.def Info: pics/original_formants.png  used on input line 178.
+(pdftex.def)             Requested size: 151.20154pt x 113.77708pt.
+<pics/processed_formants.png, id=38, 448.5558pt x 335.8146pt>
+File: pics/processed_formants.png Graphic file (type png)
+<use pics/processed_formants.png>
+Package pdftex.def Info: pics/processed_formants.png  used on input line 181.
+(pdftex.def)             Requested size: 166.32092pt x 124.5159pt.
+<pics/final_formants.png, id=39, 535.7616pt x 402.303pt>
+File: pics/final_formants.png Graphic file (type png)
+<use pics/final_formants.png>
+Package pdftex.def Info: pics/final_formants.png  used on input line 184.
+(pdftex.def)             Requested size: 166.32092pt x 124.89066pt.
+<pics/exp.png, id=40, 433.1382pt x 319.9152pt>
+File: pics/exp.png Graphic file (type png)
+<use pics/exp.png>
+Package pdftex.def Info: pics/exp.png  used on input line 195.
+(pdftex.def)             Requested size: 201.59692pt x 148.90059pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<pics/drones.png, id=41, 361.35pt x 194.6472pt>
 File: pics/drones.png Graphic file (type png)
 <use pics/drones.png>
-Package pdftex.def Info: pics/drones.png  used on input line 170.
+Package pdftex.def Info: pics/drones.png  used on input line 207.
 (pdftex.def)             Requested size: 201.59692pt x 108.59477pt.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+[4] [5 <./pics/original_formants.png> <./pics/processed_formants.png> <./pics/f
+inal_formants.png> <./pics/exp.png> <./pics/drones.png>] (./main.bbl) [6
 
-[4] (./main.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-)
-Overfull \vbox (1.68628pt too high) has occurred while \output is active []
-
-
-[5 <./pics/original_formants.jpg> <./pics/processed_formants.jpg> <./pics/final
-_formants.jpg> <./pics/drones.png>] (./main.aux)
+]
+(./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4082 strings out of 492649
- 55195 string characters out of 6129621
- 133361 words of memory out of 5000000
- 7825 multiletter control sequences out of 15000+600000
+ 4134 strings out of 492649
+ 55988 string characters out of 6129621
+ 132511 words of memory out of 5000000
+ 7871 multiletter control sequences out of 15000+600000
  43554 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,37p,1406b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -541,10 +586,10 @@ t/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on main.pdf (5 pages, 1093306 bytes).
+Output written on main.pdf (6 pages, 4932575 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

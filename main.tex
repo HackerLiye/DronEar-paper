@@ -76,14 +76,46 @@ In doing so we made the following specific contributions:
 \section{ Audio Signatures and Basic Movements of Drones}
 DronEar relies on the unique audio signatures produced by drone propellers to detect drone presence and its movements, as well as differentiate them from other noise making objects.  In this section, we start by providing the background of spectrogram and drone audio signatures, then discuss four basic movements of drones and how their audio signature shifts as they move.
 \subsection{Drone Audio Signatures}
-Our project works by setting up an omnidirectional microphone in a privacy-sensitive place to pick up the sound of the surrounding drones, and by extracting, analyzing, and processing the audio information, to determine the motion state of the drone around the subject. Infer whether the current subject is under the threat of illegal piracy by the intruder operating the drone.
+Our project works by setting up an omni-directional microphone in a privacy-sensitive place to pick up the sound of surrounding drones, and by extracting, analyzing, and processing the audio information, to determine the motion state of the drone around the subject. Infer whether the current subject is under the threat of illegal piracy by the intruder operating the drone.
 
 The main features in the audio information from the microphone we extracted include: RSSI (Received Signal Strength Indication) of the sound signal, and logical position information of the resonance peak of the sound signal, including the time of occurrence and the frequency where it located.
 
 In the features above, the RSSI value of the sound signal objectively reflects the signal strength of the sound emitted by the drone received by the microphone: the larger the RSSI value, the greater the signal strength of the sound emitted by the drone received by the microphone, which indicated the drone is closer to the microphone; the smaller the RSSI value, the smaller the signal strength of the sound from the drone received by the microphone, and indicates drone is farther from the microphone. Based on this, we can use the “Distance-Detecting Sectional Type Algorithm Based on RSSI” we designed to approximately calculate the distance between the drone and the microphone that receives the sound. 
 
-The resonance peak proposed by us in the above features is actually a reference to the concept of resonance in the field of speech recognition, and is a term of acoustic phonetics. In the field of speech recognition, a resonance is a reinforced speech band that is displayed on a spectrogram automatically drawn by a sound spectrograph. When the sound passes through the resonant cavity, it is filtered by the cavity, so that the energy of different frequencies in the frequency domain is redistributed, part of which is strengthened by the resonance of the resonant cavity, and the other part is attenuated. Because the energy distribution is not uniform, the strong part comes more significantly than the weak part, then it is called "resonance". In our project, the concept of resonance is similar. We perform a short-time Fourier transform on the sound information from the drone received by the microphone, and we will obtain a sound intensity-frequency distribution map at each sampling instant. By setting the formant intensity threshold parameter $\beta_{strength}$, we filter out the sound frequency whose sound intensity is higher than the formant intensity threshold parameter $\beta_{strength}$ for the sound intensity-frequency distribution at each sampling time, that is, the logical position information of the formant of the sound signal received by the microphone is extracted. 
+\begin{figure*}[!t]
+	\centering
+	\subfigure[Relative RSSI when drawing near]{
+		\label{rssi near}
+		\includegraphics[width=0.4\textwidth]{pics/rssi_near.png}}
+	\subfigure[Relative RSSI when moving away]{
+		\label{rssi far}
+		\includegraphics[width=0.4\textwidth]{pics/rssi_far.png}}
+	\caption{Relations between RSSI and drone movements}
+	\label{formants}
+\end{figure*}
+
+The resonance peak proposed by us in the features above is actually a reference to the concept of resonance in the field of speech recognition, and is a term of acoustic phonetics. In the field of speech recognition, a resonance is a reinforced speech band that is displayed on a spectrogram automatically drawn by a sound spectrograph. When the sound passes through the resonant cavity, it is filtered by the cavity, so that the energy of different frequencies in the frequency domain is redistributed, part of which is strengthened by the resonance of the resonant cavity, and the other part is attenuated. Because the energy distribution is not uniform, the strong part comes more significantly than the weak part, then it is called "resonance". In our project, the concept of resonance is similar. We perform a short-time Fourier transform on the sound information from the drone received by the microphone, and we will obtain a sound intensity-frequency distribution map at each sampling instant. By setting the formant intensity threshold parameter $\beta_{strength}$, we filter out the sound frequency whose sound intensity is higher than the formant intensity threshold parameter $\beta_{strength}$ for the sound intensity-frequency distribution at each sampling time, that is, the logical position information of the formant of the sound signal received by the microphone is extracted. 
+
+
 \subsection{Drone Movements}
+
+\begin{figure}[!h]
+	\centering
+	\subfigure[Moving up]{
+		\label{up}
+		\includegraphics[width=0.2\textwidth]{pics/up.png}}
+	\subfigure[Moving down]{
+		\label{down}
+		\includegraphics[width=0.2\textwidth]{pics/down.png}}
+	\subfigure[Moving near]{
+		\label{near}
+		\includegraphics[width=0.2\textwidth]{pics/near.png}}
+	\subfigure[Moving away]{
+		\label{far}
+		\includegraphics[width=0.2\textwidth]{pics/far.png}}
+	\caption{Processing of drone formants diagram algorithm}
+	\label{formants}
+\end{figure}
 
 \section{System Design}
 The "UAV Motion Judgment and Intrusion Threat Detection System" designed by us is a real-time system. The system receives the sound information of the surrounding environment through the microphone in real time, and judges whether there is a drone in the surrounding environment; if there is a drone, it continues to judge the operating state of the drone and whether there is a drone intrusion threat under the current situation. (sneak shots, thieves, etc.). The real-time system is divided into three modules, which work together to operate in a pipeline-like manner. The three modules are:
@@ -92,7 +124,13 @@ The "UAV Motion Judgment and Intrusion Threat Detection System" designed by us i
     \item Feature analysis module. The module is designed for analyzing the audio files generated by the previous module, and extracting corresponding features to determine the specific actions of the drone in the audio file of the previous module.
     \item Display module. The module is used for displaying the UAV’s action results analyzed and judged by the previous module to the user through the user interface, so that the user can see at a glance the current state of operation of the drone. Also, when a possible drone intrusion threat occurs, the module warns the user against possible UAV intrusion threats.
 \end{itemize}
-
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{pics/workflow.png}
+	\caption{DronEar workflow}
+	
+	\label{workflow}
+\end{figure}
 The workflow of the system is as follows: after receiving the start command, the system starts to collect the sound signal in the environment and input it into the data analysis module for calculation and processing, and then determines the next action according to the processing result. If no drone is detected, return to the first step to continue collecting sound signals in the environment; if detected, continue to use our proposed base RSSI distance detection algorithm and UAV formant diagram algorithm to extract its action Information and compare it against our attacker model to detect whether it has malicious intrusion. If there is, the system will issue an alarm to prompt the user to take corresponding measures to avoid the risk; if not, continue to detect whether the drone still exists, and then continue to extract its action information for analysis and continuously monitor whether it is malicious; if not If it exists, go back to the first step and re-acquire the sound signal in the environment.
 
 
@@ -133,28 +171,43 @@ $$k_{average}=\sum_{i=1}^n\frac{k_{{line}_i}}{n}$$
 The magnitude change of the interval frequency of adjacent formants at successive moments can be approximated. Furthermore, we can introduce the change in the angle formed between the drone and the microphone.
 
 
-
-\begin{figure*}[t]
+\begin{figure*}[!ht]
 	\centering
 	\subfigure[Original spectrogram]{
 		\label{original_formants}
-		\includegraphics[width=0.3\textwidth]{pics/original_formants.jpg}}
+		\includegraphics[width=0.3\textwidth]{pics/original_formants.png}}
 	\subfigure[Locations of formants]{
 		\label{processed_formants}
-		\includegraphics[width=0.3\textwidth]{pics/processed_formants.jpg}}
+		\includegraphics[width=0.33\textwidth]{pics/processed_formants.png}}
 	\subfigure[Unioned formants]{
 		\label{final_formants}
-		\includegraphics[width=0.3\textwidth]{pics/final_formants.jpg}}
-	\caption{Processing of Drone Formants Diagram Algorithm}
+		\includegraphics[width=0.33\textwidth]{pics/final_formants.png}}
+	\caption{Processing of drone formants diagram algorithm}
 	\label{formants}
 \end{figure*}
 
 
+
 \section{Evaluation}
 \subsection{Experiment Setup}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{pics/exp.png}
+	\caption{Experiment equipments}
+	\label{exp}
+\end{figure}
 
 We conducted experiments in three different environments, including a street next to the teaching building (as high noise environment) , athletic field (as ordinary noise environment) , top floor of the teaching building (as low noise environment) . In each environment, the data are collected when the drone is flying at different distances with respect to our receiver. We used three drones to conduct our experiment, including DJI Matrice M100, DJI Phantom 3 Advanced and DJI Spark to prove the robustness of our system to different drone models. 
 
+
+
+\begin{figure}[!h]
+
+	\centering
+	\includegraphics[width=0.4\textwidth]{pics/drones.png}
+	\caption{Drones we used}
+	\label{drones}
+\end{figure}
 
 
 \noindent{\textbf{Speeds.}}\hspace{1mm} 
@@ -165,12 +218,7 @@ We also fly the drone at different distances, where the drone is initially 10 me
 
 In the experiment, we not only recorded the detection accuracy of the detection system (timely alarm feedback when the UAV invades and no false alarms when there is no UAV invasion) , but also accurately calculated the detection accuracy (the drone is detected by the detection system to detect the minimum distance of movement) under different conditions to find out the weakest link of the detection system and improve it.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.4\textwidth]{pics/drones.png}
-	\caption{Drones we used}
-	\label{drones}
-\end{figure}
+
 
 \subsection{Result}
 
@@ -198,6 +246,6 @@ Peacock and Johnstone detect drones by using protocol signatures from drone Wi-F
 Since the information they get comes from the communication between the drone and the remote control, when the attacker writes the motion path to the drone and automatically moves it around the target, the detection will fail. The purpose of privacy protection, in addition, the two methods above can only detect the presence or absence of the drone and cannot judge the motion state or trajectory of the drone, which has great limitations in the information dimension acquired.
 
 \bibliographystyle{acm}
-\balance
+
 \bibliography{sigproc}  
 \end{document}
