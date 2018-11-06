@@ -139,6 +139,16 @@ The DronEar proposed by us continuously receives the sound information of the su
 A number of algorithms are introduced in order to capture and analyze the presence and movements of the drone.
 In the following subsection, we first define our problem and identifies challenges in realizing such a system, then introduce three main modules of our system and how they cooperate with each other to form a pipeline-like system. We then present the detail of the algorithm we designed and explain how they realize in detecting ranges and movements.
 
+\noindent{\textbf{Challenges.}}However, 
+
+\begin{enumerate}
+	\item aaa
+	
+	\textbf{\item Computing speed.} Because the algorithm used to extract the audio features is complicated, and the processing time is longer than the time of the audio itself. In order to solve this problem, we need to enable parallel computing when processing audio. In addition, the number of samples can be reduced by reducing the sampling rate of the drone audio to reduce the amount of calculation.
+	\textbf{\item Feature extraction.} 
+	\textbf{\item Environment noise.} When the drone is far away from the microphone, the environmental noise has a great impact on the audio acquisition and processing of the drone, so noise canceling is required in order to achieve longer detection range.
+\end{enumerate}
+
 \subsection{Problem Formulation}
 
 
@@ -230,7 +240,7 @@ We conducted experiments in three different environments, including a street nex
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.4\textwidth]{pics/drones.png}
-	\caption{Drones we used}
+	\caption{Drones we used. From left to right, DJI Matrice 100, DJI Phantom 3, DJI Spark}
 	\label{drones}
 \end{figure}
 
@@ -250,7 +260,13 @@ In the experiment, we not only recorded the detection accuracy of the detection 
 
 
 \section{Discussion}
-
+We would like to add a few microphones to experiment and try to get other aspects of the drone, not just his movements and existence, such as its precise position coordinates. 
+We intend to add more action dimensions to the drone, such as hovering, and separate it from not moving.
+We also desire to increase the processing speed of the system to make it more timely and capable. 
+In addition, we wish to introduce more sound indicators into the algorithm to reach the point where the size of drone can be distinguished. 
+Also in the future we hope to address the fact that our system is not currently capable of detecting multiple drones in the same vicinity at the same time. 
+Moreover, we would like to evaluate the impact of different environments, e.g. windy condition, to the accuracy of detection. 
+Finally, more experimental scenarios and drone privacy intrusion models need to be experimented to ensure the reliability of our systems.
 
 
 \section{Related Work}
@@ -272,9 +288,10 @@ Peacock and Johnstone detect drones by using protocol signatures from drone Wi-F
 Since the information they get comes from the communication between the drone and the remote control, when the attacker writes the motion path to the drone and automatically moves it around the target, the detection will fail. The purpose of privacy protection, in addition, the two methods above can only detect the presence or absence of the drone and cannot judge the motion state or trajectory of the drone, which has great limitations in the information dimension acquired.
 
 \section{Conclusion}
-The method based on sound instead of image for UAV action and state detection is a non-contact UAV recognition technology. Its advantages are as follows: The traditional UAV detection method usually uses GPS positioning system and radar, but radar is mainly used in military defense facilities, ordinary people can’t use it to detect the presence of potentially threatening drones within their range of activities. Traditional methods such as image recognition have the potential to confuse flying objects such as drones and normal birds. Compared with the above method, UAV's sound signal for UAV motion and condition monitoring is not affected by lighting conditions, and will not be confused by other flying objects similar to the drone. This makes our research on the flight state and action of invading UAVs by sound detection has an incomparable advantage compared with the traditional methods.
 
-Based on the above, we propose an innovative algorithm for flight state and motion detection based on RSSI and Dijkstra. These two algorithms can complement each other. The RSSI algorithm mainly extracts the loudness characteristics of the sound emitted by the drone. The Dijkstra algorithm mainly extracts the number of formants. The algorithm makes full use of the two most obvious characteristics of the loudness and frequency of the sound. Only one microphone captures a specific range of audio signals and transmits the signals to the computer. Using MATLAB to perform fast Fourier transform and other processing, the loudness variation and frequency distribution of all sounds in a short period of time can be obtained Through the change of the acoustic sound level, it can be obtained whether the drone is currently close to or away from the user, and the number of formants is used to detect the presence of drones. The system has stable high recognition accuracy and great robustness.
+The method based on sound instead of image for drone action and state detection is a non-contact drone recognition technology. Its advantages are as follows: The traditional UAV detection method usually uses GPS positioning system and radars, but radar is mainly used in military defense facilities, ordinary people can’t use it to detect the presence of potentially threatening drones within their range of activities. Traditional methods such as image recognition have the potential to confuse flying objects such as drones and normal birds. Compared with the above method, drone's sound signal for drone motion and condition monitoring is not affected by lighting conditions, and will not be confused by other flying objects similar to the drone. This makes our research on the flight state and action of invading drones by sound detection has an incomparable advantage compared with the traditional methods.
+
+Based on the above, we propose an innovative algorithm for flight state and motion detection based on RSSI and Dijkstra. These two algorithms can complement each other. The RSSI algorithm mainly extracts the loudness characteristics of the sound emitted by the drone. The Dijkstra algorithm mainly extracts the number of formants. Theses algorithms make full use of the two most obvious characteristics of the loudness and frequency of the sound. Only one microphone captures a specific range of audio signals and transmits the signals to the computer. Using MATLAB to perform fast Fourier transform and other processing, the loudness variation and frequency distribution of all sounds in a short period of time can be obtained. Through the change of the acoustic sound level, it can be obtained whether the drone is currently close to or away from the user, and the number of formants is used to detect the presence of drones. The system has stable high recognition accuracy and great robustness.
 
 At the same time, the experimental equipment used in our system is a very common and cheap equipment in daily life, easy to promote. The system we designed has broad application prospects. In addition, as an algorithm that relies only on sound to detect the presence and analysis of drones, our system can provide good scalability for future research on other dimensions such as images.
 
