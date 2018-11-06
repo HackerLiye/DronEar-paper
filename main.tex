@@ -107,7 +107,7 @@ The resonance peak proposed by us in the features above is actually a reference 
 \subsection{Drone Movements}
 In the drone intrusion model we envisioned, the intruder used an unmanned aerial vehicle to invade the privacy or trade secrets of other individuals, attempting to violate the subject's wishes and to capture images inside the building. In this model, we assume that the intruder does not have the ability to modify the commercial unmanned aerial vehicle that they used, and they control the original unmanned aerial vehicle they purchased to complete the invasion.
 
-Since the unmanned aerial vehicle controlled by the intruder for intrusion cannot enter the interior of the building, the intruder must first control the drone to move it near a certain window outside the building during the completion of the intrusion. ZCP (Zone of Comfortable Photographing), in which the drone can capture pictures in the windows of the building more clearly and steadily. As shown in Figure \ref{zcp}, this action can be split into two parts: raising the drone vertically to a level that is flush with the window and moving the drone horizontally out of the window. After completing the above actions, the drone is in the shooting comfort zone ZCP outside a certain window of the building, and the intruder often tries to adjust the distance of the drone to the window (near or away) to obtain a suitable angle of view and suitable The clarity of the shooting until they can clearly use the drone to capture the picture they want. However, it is worth noting here that the drone cannot be arbitrarily approached to the outside of the building or its window. When the drone is very close to the outside of the building or its window, the instability of the airflow near the side of the building will result in an imbalance of airflow around the drone, which will make the drone difficult to control and increase the intrusion failure. risk.
+Since the unmanned aerial vehicle controlled by the intruder for intrusion cannot enter the interior of the building, the intruder must first control the drone to move it near a certain window outside the building during the completion of the intrusion. ZCP (Zone of Comfortable Photographing), in which the drone can capture pictures in the windows of the building more clearly and steadily. As shown in Figure \ref{zcp}, this action can be split into two parts: raising the drone vertically to a level of the window and moving the drone horizontally towards the window. After completing the actions above, the drone is in the shooting comfort zone outside a certain window of the building, and the intruder often tries to adjust the distance of the drone to the window (near or away) to obtain a suitable angle of view. and suitable The clarity of the shooting until they can clearly use the drone to capture the picture they want. However, it is worth noting here that the drone cannot be arbitrarily approached to the outside of the building or its window. When the drone is very close to the outside of the building or its window, the instability of the airflow near the side of the building will result in an imbalance of airflow around the drone, which will make the drone difficult to control and increase the intrusion failure. risk.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.4\textwidth]{pics/zcp.png}
@@ -134,7 +134,17 @@ Since the unmanned aerial vehicle controlled by the intruder for intrusion canno
 \end{figure}
 
 \section{System Design}
-The "UAV Motion Judgment and Intrusion Threat Detection System" designed by us is a real-time system. The system receives the sound information of the surrounding environment through the microphone in real time, and judges whether there is a drone in the surrounding environment; if there is a drone, it continues to judge the operating state of the drone and whether there is a drone intrusion threat under the current situation. (sneak shots, thieves, etc.). The real-time system is divided into three modules, which work together to operate in a pipeline-like manner. The three modules are:
+
+The DronEar proposed by us continuously receives the sound information of the surrounding environment through the microphone in real time, and judges whether there is a drone in the surrounding environment. if there is a drone, it continues to judge the movement of the drone and detects whether there is a drone intrusion threat under the current situation.
+A number of algorithms are introduced in order to capture and analyze the presence and movements of the drone.
+In the following subsection, we first define our problem and identifies challenges in realizing such a system, then introduce three main modules of our system and how they cooperate with each other to form a pipeline-like system. We then present the detail of the algorithm we designed and explain how they realize in detecting ranges and movements.
+
+\subsection{Problem Formulation}
+
+
+\subsection{Modules}
+
+ The real-time system is divided into three modules, which work together to operate in a pipeline-like manner. The three modules are:
 \begin{itemize}
     \item Data acquisition module. The module is responsible for recording the sound detected by the external hardware device, the microphone, according to the specified sampling interval, and generating the corresponding audio file.
     \item Feature analysis module. The module is designed for analyzing the audio files generated by the previous module, and extracting corresponding features to determine the specific actions of the drone in the audio file of the previous module.
@@ -242,6 +252,7 @@ In the experiment, we not only recorded the detection accuracy of the detection 
 \section{Discussion}
 
 
+
 \section{Related Work}
 Multiple ways have been employed for drone detection, including radar, image and signal. We discuss these three ways respectively in this section.
 
@@ -259,6 +270,13 @@ Phuc Nguyen et al. proposed Matthan, a system that uses RF signals to detect the
 Peacock and Johnstone detect drones by using protocol signatures from drone Wi-Fi connections. For this to work, they must rely on unencrypted connections between the drone and the controller, but not for new models. They also discussed the use of media access control (MAC) address prefixes by known manufacturers to identify drones. Although this is a simple and reliable method of detecting a drone built by a manufacturer with a unique MAC prefix range, it can only detect known drone models, and with the drone model With more and more types, it is becoming more and more difficult to build and update a MAC prefix database. In addition, some manufacturers use uncertain MAC prefixes if their camera system on a drone includes a GoPro camera. But even when the drone manufacturer's MAC prefix is detected, relying on the presence of only certain MAC addresses is not sufficient to distinguish between the neighbors who are using the drone and the actual privacy intrusion attack.
 
 Since the information they get comes from the communication between the drone and the remote control, when the attacker writes the motion path to the drone and automatically moves it around the target, the detection will fail. The purpose of privacy protection, in addition, the two methods above can only detect the presence or absence of the drone and cannot judge the motion state or trajectory of the drone, which has great limitations in the information dimension acquired.
+
+\section{Conclusion}
+The method based on sound instead of image for UAV action and state detection is a non-contact UAV recognition technology. Its advantages are as follows: The traditional UAV detection method usually uses GPS positioning system and radar, but radar is mainly used in military defense facilities, ordinary people can’t use it to detect the presence of potentially threatening drones within their range of activities. Traditional methods such as image recognition have the potential to confuse flying objects such as drones and normal birds. Compared with the above method, UAV's sound signal for UAV motion and condition monitoring is not affected by lighting conditions, and will not be confused by other flying objects similar to the drone. This makes our research on the flight state and action of invading UAVs by sound detection has an incomparable advantage compared with the traditional methods.
+
+Based on the above, we propose an innovative algorithm for flight state and motion detection based on RSSI and Dijkstra. These two algorithms can complement each other. The RSSI algorithm mainly extracts the loudness characteristics of the sound emitted by the drone. The Dijkstra algorithm mainly extracts the number of formants. The algorithm makes full use of the two most obvious characteristics of the loudness and frequency of the sound. Only one microphone captures a specific range of audio signals and transmits the signals to the computer. Using MATLAB to perform fast Fourier transform and other processing, the loudness variation and frequency distribution of all sounds in a short period of time can be obtained Through the change of the acoustic sound level, it can be obtained whether the drone is currently close to or away from the user, and the number of formants is used to detect the presence of drones. The system has stable high recognition accuracy and great robustness.
+
+At the same time, the experimental equipment used in our system is a very common and cheap equipment in daily life, easy to promote. The system we designed has broad application prospects. In addition, as an algorithm that relies only on sound to detect the presence and analysis of drones, our system can provide good scalability for future research on other dimensions such as images.
 
 \bibliographystyle{acm}
 
