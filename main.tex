@@ -129,8 +129,8 @@ Since the unmanned aerial vehicle controlled by the intruder for intrusion canno
 	\subfigure[Moving away]{
 		\label{far}
 		\includegraphics[width=0.2\textwidth]{pics/far.png}}
-	\caption{Processing of drone formants diagram algorithm}
-	\label{formants}
+	\caption{Four basic types of movements of drone}
+	\label{movements}
 \end{figure}
 
 \section{System Design}
@@ -142,11 +142,11 @@ In the following subsection, we first define our problem and identifies challeng
 \noindent{\textbf{Challenges.}}However, 
 
 \begin{enumerate}
-	\item aaa
+	\item \textbf{Computing speed.}
 	
-	\textbf{\item Computing speed.} Because the algorithm used to extract the audio features is complicated, and the processing time is longer than the time of the audio itself. In order to solve this problem, we need to enable parallel computing when processing audio. In addition, the number of samples can be reduced by reducing the sampling rate of the drone audio to reduce the amount of calculation.
-	\textbf{\item Feature extraction.} 
-	\textbf{\item Environment noise.} When the drone is far away from the microphone, the environmental noise has a great impact on the audio acquisition and processing of the drone, so noise canceling is required in order to achieve longer detection range.
+	\item \textbf{Computing speed.} Because the algorithm used to extract the audio features is complicated, and the processing time is longer than the time of the audio itself. In order to solve this problem, we need to enable parallel computing when processing audio. In addition, the number of samples can be reduced by reducing the sampling rate of the drone audio to reduce the amount of calculation.
+	\item \textbf{Feature extraction.} When the distance of microphone and drone is getting further, the vocal feature we received becomes less noticeable, which means same movement degree of drone would result in fewer feature changes. This limits the maximum detection range of our system.
+	\item \textbf{Environment noise.} When the drone is far away from the microphone, the environmental noise has a great impact on the audio acquisition and processing of the drone, so we applied noise canceling to the sound signal we received to overcome the impact of environmental noise.
 \end{enumerate}
 
 \subsection{Problem Formulation}
@@ -171,7 +171,8 @@ The workflow of the system is as follows: after receiving the start command, the
 
 
 \subsection{Drone Movement Detection Algorithm}
-\subsubsection{Segmented distance detection algorithm based on RSSI}
+In this section, we present DronEar's detection algorithms.
+\subsubsection{Segmented distance detection based on RSSI}
 The input of the algorithm code is a piece of mono audio signal $x(t)$. After a short time Fourier transform, the spectrum of the audio is obtained:
 $$SP_x(t,f)=|X(t,f)|^2=|\int_{-\infty}^\infty\omega(t-\tau)x(\tau)e^{-j2\pi f\tau}d\tau|^2$$
 Then the data on the sampling points on each spectrogram is modulo and summed:
@@ -260,6 +261,10 @@ In the experiment, we not only recorded the detection accuracy of the detection 
 
 
 \section{Discussion}
+
+Our system has focused on detecting the presence of drones through their loudness and frequency of the sound. We wish to expand our experiments to consider a wider variety of drones and greater distances Our system should be extended to contain anti-jamming devices for drone sounds from other sounding objects other than drones. Attackers may use this type of interference to cause our system to alert frequently. In this case, the user may reduce trust in our system or generate a kind of fatigue to the alarm, whichever is not conducive to privacy protection. Our system should also be enhanced to record the flight routes of intruding drones, localizing the position of the drone is the next logical step, but this consideration is outside the scope of this paper.
+
+
 We would like to add a few microphones to experiment and try to get other aspects of the drone, not just his movements and existence, such as its precise position coordinates. 
 We intend to add more action dimensions to the drone, such as hovering, and separate it from not moving.
 We also desire to increase the processing speed of the system to make it more timely and capable. 
